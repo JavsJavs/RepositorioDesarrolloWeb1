@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: calibri;
+            display: flex;
+            flex-direction: column;
+        }
+        .top{
+            display: block;
+            text-align: center;
+            background-color: #1ABC9C;
+            color: white;
+            line-height: 100px;
+            height:100px;
+            font-size: 28px;
+        }
+        .links{
+            background-color: #333333;
+            color: white;
+            height:40px;
+            line-height: 40px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            margin-left: 10px;
+        }
+        .mid{
+            display: inline-flex;
+            flex-direction: row;
+            align-content: flex-start;
+        }
+        .about{
+            flex-direction: column;
+            width: 30%;
+            background-color: #f1f1f1;
+            color: black;
+        }
+        .maintext{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .titleh{
+            flex-direction: column;
+            width: 70%;
+            background-color: white;
+            color: black;
+        }
+        .image{
+            display: inline-block;
+            background-color: #aaaaaa;
+            width: 98%;
+            height: 200px;
+            margin-top: 10px;
+        }
+        .foot{
+            text-align: center;
+            color: black;
+            line-height: 60px;
+            background-color: #dddddd;
+            height:60px;
+            font-size: 18px;
+        }
+        @media screen and (max-width: 700px){
+            .top{
+                display:none;
+            }
+            .mid{
+                display:flex;
+                flex-direction:column;
+            }
+            .titleh{
+                width:100%;
+            }
+            .about{
+                width:100%;
+            }
+            .foot{
+                display:none;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="top">
+        <strong>FlexWeb</strong>
+    </div>
+    <div class="links">
+        <a href="www.google.com">Link</a>
+        <a href="www.google.com">Link</a>
+        <a href="www.google.com">Link</a>
+        <a href="www.google.com">Link</a>
+    </div>
+    <div class="mid">
+        <div class="about">
+            <div class = maintext>
+                <h2>About me</h2>
+                <h4>Photo of me</h4>
+                <div class="image">
+                    <span class="maintext">Image</span>
+                </div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim...</p>
+            </div>
+        </div>
+        <div class="titleh">
+            <div class = maintext>
+                <h2>TITLE HEADING</h2>
+                <h4>Title description, Dec 7, 2017</h4>
+                <div class="image">
+                    <span class="maintext">Image</span>
+                </div>
+                <p>Some text...</p><p>Sunt in culpa qui office deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <footer class="foot"><strong>
+        Footer
+    </strong></footer>
+</body>
+</html>
