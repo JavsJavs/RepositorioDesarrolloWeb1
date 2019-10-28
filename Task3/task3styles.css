@@ -1,0 +1,138 @@
+body{
+    font-family: Arial, sans-serif;
+    color: #666;
+    font-size: 14px;
+}
+.list{
+    display: flex;
+    text-align: left;
+    line-height: 25px;
+    flex-direction: column;
+    padding-left: 1em;
+    width:90%;
+    counter-reset: item;
+    list-style-type: none;
+}
+.tarjeta{
+    display: flex;
+    flex-grow: 1;
+    margin-right: 12px;
+    flex-direction: row;
+    border-bottom: 1px solid #DDD;
+}
+.number{
+    margin: 5px;
+    width:30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+}
+.photo{
+    width: 100px;
+    box-shadow: 2px 3px 4px #BBB;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+.text{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.maintext{
+    display: block;
+    width: 70%;
+    margin: 5px;
+    border-right: 1px solid #DDD;
+}
+.flag{
+    height: 12px;
+    width: 22px;
+}
+.usrimg{
+    height: 12px;
+}
+.score{
+    font-size: 24px;
+    background: #447CAD;
+    text-align: center;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    width: 2em;
+    height: 1.6em;
+    line-height: 1.6em;
+    border-radius: .3em;
+    box-sizing: border-box;
+    border: 1px solid #447CAD;
+}
+.filmtitle{
+    color: black;
+}
+.filmtitle a{
+    text-decoration: none;
+    color: black;
+}
+.director a{
+    text-decoration: none;
+}
+.director{
+    display: block;
+}
+.cast{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    margin-right: 5%;
+    overflow: hidden;
+    max-height: 3.6em;
+}
+.reviews{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+    font-size: 12px;
+    align-items: center;
+    width: 120px;
+}
+
+@media screen and (max-width: 450px){
+    .list{
+        width: 100%;
+    }
+    .number{
+        display: none;
+    }
+    .maintext{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        border-right: none;
+    }
+    .reviews{
+        display: flex;
+        flex-direction: row;
+    }
+    .score{
+        margin-right: 10px;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 14px;
+    }
+    .cast{
+        display: block;
+        -webkit-line-clamp: none;
+        -webkit-box-orient: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 30%;
+        background: white;
+        resize: horizontal;
+    }
+}
