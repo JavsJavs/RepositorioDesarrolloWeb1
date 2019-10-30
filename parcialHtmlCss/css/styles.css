@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background-color: #e8e8e8;
+}
+.nleague{
+    font-size: 16px;
+    font-weight: bold;
+}
+.scoreboard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+}
+.info{
+    margin: 10px;
+}
+.res{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+}
+.clubres{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.photo{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+.nclub{
+    line-height: 1.5em;
+    display: block;
+    margin: 5px;
+}
+.identifier{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+.counter{
+    display: block;
+    margin: 5px;
+    text-align: center;
+    letter-spacing: -1px;
+    width: 2.2em;
+    height: 2em;
+    line-height: 2em;
+    border-radius: .3em;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+}
+@media screen and (max-width: 300px) {
+    .scoreboard{
+        width: 100%;
+    }
+    .res {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    .clubres{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: 10px;
+    }
+    .nclub {
+        order: 1;
+    }
+    .counter{
+        order: 3;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+}
