@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dropDownItem{
+    display: block;
+    border: none;
+    background-color: white;
+}
+
+#exhibitor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+#exhibitor img{
+    height: 100px;
+    margin: 5px;
+    box-shadow: 3px 4px 5px 1px rgba(166,166,166,0.73);
+    border-radius: 5px;
+}
