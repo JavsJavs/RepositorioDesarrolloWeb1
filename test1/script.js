@@ -1,6 +1,6 @@
 var body = document.querySelector('body');
 
-window.onload = function() {
+window.onload = function () {
     loadWeb();
 };
 
@@ -8,13 +8,17 @@ function loadWeb() {
     loadItems();
     body.innerHTML += `
     <div id="dropdown">
+        <div id="myModal" class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img class="modal-content" id="modalImg">
+          <div id="caption"></div>
+        </div>
         <select id="mySelect" onchange="changeBreed()">
             <option>Click a breed to see the photos</option>
         </select>
     </div>
     <div id="exhibitor">
     </div>`;
-    document.querySelector("#webLoaderButton").innerHTML = ``;
 }
 
 function loadItems() {
@@ -22,7 +26,7 @@ function loadItems() {
     xhr.responseType = 'json';
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var dogsJson = xhr.response;
+            let dogsJson = xhr.response;
             loadDropDown(dogsJson);
         }
     };
@@ -65,6 +69,18 @@ function showBreedPhotos(currentBreedJson) {
     exhibitor.innerHTML = '';
     console.log(currentBreedJson.message[1]);
     for (let i = 0; i < 100 && i < currentBreedJson.message.length; i++) {
-        exhibitor.innerHTML += `<img src="${currentBreedJson.message[i]}">`;
+        exhibitor.innerHTML += `<img class="dogPhoto" id="photo${i}" onclick="photoClick('${currentBreedJson.message[i]}')" src="${currentBreedJson.message[i]}">`;
     }
+}
+
+function photoClick(imgSrc) {
+    let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("modalImg");
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+}
+
+function closeModal() {
+    let modal = document.getElementById("myModal");
+    modal.style.display = "none";
 }
