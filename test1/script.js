@@ -44,8 +44,18 @@ function loadDropDown(dogsJson) {
     let jsonKeys = Object.keys(dogsJson.message);
     let selectList = document.querySelector("#mySelect");
     for (let i = 0; i < jsonKeys.length; i++) {
-        let currentBreedName = jsonKeys[i].slice(0, 1).toUpperCase() + jsonKeys[i].slice(1, jsonKeys[i].length);
-        selectList.innerHTML += `<option onselect="changeBreed()" class="dropDownItem" id="item${i}">${currentBreedName}</option>`
+        let subBreed = dogsJson.message[jsonKeys[i]];
+        if (subBreed.length > 0) {
+            console.log(subBreed[0]);
+            for (let j = 0; j < subBreed.length; j++) {
+                let currentBreedName = subBreed[j].slice(0, 1).toUpperCase() + subBreed[j].slice(1, subBreed[j].length) + ' ' + jsonKeys[i].slice(0, 1).toUpperCase() + jsonKeys[i].slice(1, jsonKeys[i].length);
+                selectList.innerHTML += `<option class="dropDownItem" id="item${i}">${currentBreedName}</option>`
+            }
+
+        } else {
+            let currentBreedName = jsonKeys[i].slice(0, 1).toUpperCase() + jsonKeys[i].slice(1, jsonKeys[i].length);
+            selectList.innerHTML += `<option class="dropDownItem" id="item${i}">${currentBreedName}</option>`
+        }
     }
 }
 
@@ -58,6 +68,12 @@ function loadBreedPhotos(breedName) {
             showBreedPhotos(currentBreedJson);
         }
     };
+    let breedNameLength = breedName.split(' ').length;
+    if (breedNameLength > 1) {
+        console.log(breedName);
+        breedName = breedName.split(' ')[1] + '/' + breedName.split(' ')[0];
+        console.log(breedName);
+    }
     xhr2.open("GET", `https://dog.ceo/api/breed/${breedName}/images`);
     xhr2.send();
 }
