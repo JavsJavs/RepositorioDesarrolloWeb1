@@ -36,18 +36,16 @@ function loadItems() {
 
 function changeBreed() {
     let breedName = document.querySelector("#mySelect").value;
-    console.log(document.querySelector("#mySelect").value);
     breedName = breedName.toLowerCase();
     loadBreedPhotos(breedName);
 }
 
 function loadDropDown(dogsJson) {
     let jsonKeys = Object.keys(dogsJson.message);
-    console.log(jsonKeys[0]);
     let selectList = document.querySelector("#mySelect");
     for (let i = 0; i < jsonKeys.length; i++) {
         let currentBreedName = jsonKeys[i].slice(0, 1).toUpperCase() + jsonKeys[i].slice(1, jsonKeys[i].length);
-        selectList.innerHTML += `<option onselect="changeBreed('${currentBreedName}','${jsonKeys[i]}')" class="dropDownItem" id="item${i}">${currentBreedName}</option>`
+        selectList.innerHTML += `<option onselect="changeBreed()" class="dropDownItem" id="item${i}">${currentBreedName}</option>`
     }
 }
 
@@ -67,7 +65,6 @@ function loadBreedPhotos(breedName) {
 function showBreedPhotos(currentBreedJson) {
     let exhibitor = document.querySelector("#exhibitor");
     exhibitor.innerHTML = '';
-    console.log(currentBreedJson.message[1]);
     for (let i = 0; i < 100 && i < currentBreedJson.message.length; i++) {
         exhibitor.innerHTML += `<img class="dogPhoto" id="photo${i}" onclick="photoClick('${currentBreedJson.message[i]}')" src="${currentBreedJson.message[i]}">`;
     }
