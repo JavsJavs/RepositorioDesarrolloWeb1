@@ -1,0 +1,239 @@
+body{
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    font-size: 14px;
+    background-color: #292929;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+#searchBar{
+    width: 65%;
+    border: none;
+    font-size: 30px;
+    background-color: #447CAD;
+    color: white;
+    border-radius: 10px;
+    margin: 20px;
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#searchBar:focus{
+    outline: none;
+}
+#icon svg, #icon i{
+    height: 30px;
+    position: absolute;
+    left: 72%;
+    top: 40px;
+    fill: white;
+}
+::placeholder {
+    color: whitesmoke;
+    opacity: 50%;
+}
+.list{
+    line-height: 25px;
+    width:60%;
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+}
+.card{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    border-bottom: 1px solid #DDD;
+    cursor: pointer;
+}
+.number{
+    display: block;
+    margin: 5px;
+    width:30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.photoContainer img{
+    width: 100px;
+    box-shadow: 2px 3px 4px #000;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+.text{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.mainText{
+    display: block;
+    width: 90%;
+    margin: 5px;
+    border-right: 1px solid #DDD;
+}
+.score{
+    font-size: 24px;
+    background: #447CAD;
+    text-align: center;
+    color: #FFFFFF;
+    letter-spacing: -1px;
+    width: 2em;
+    height: 1.6em;
+    line-height: 1.6em;
+    border-radius: .3em;
+    box-sizing: border-box;
+    border: 1px solid #447CAD;
+}
+.filmTitle{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.filmTitle a{
+    text-decoration: none;
+}
+.filmTitle strong{
+    margin-right: 3px;
+}
+.filmTitle img{
+    margin-left: 5px;
+    height: 12px;
+    width: 22px;
+}
+.users{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.users img{
+    height: 16px;
+}
+.director{
+    display: block;
+}
+.director a{
+    text-decoration: none;
+}
+.cast{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    margin-right: 5%;
+    overflow: hidden;
+    max-height: 3.6em;
+}
+.cast a{
+    text-decoration: none;
+}
+.reviews{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: center;
+    font-size: 12px;
+    align-items: center;
+    width: 10%;
+}
+.detailsPhotoContainer img{
+    height: 450px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    opacity: 100%;
+}
+.Details{
+    margin: 30px;
+    display: flex;
+    text-align: left;
+    line-height: 25px;
+    flex-direction: row;
+    width:90%;
+}
+.detailsBackgroundImage img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 20%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+}
+.detailsText{
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+    font-size: 16px;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.detailsFilmTitle{
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+.detailsFilmTitle strong{
+    margin-right: 5px;
+}
+.detailsFilmTitle img{
+    margin-left: 5px;
+    height: 28px;
+}
+.textTitle{
+    font-weight: bold;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 450px){
+    .list{
+        width: 100%;
+    }
+    .number{
+        display: none;
+    }
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        border-right: none;
+    }
+    .reviews{
+        display: flex;
+        flex-direction: row;
+        width: 120px;
+    }
+    .score{
+        margin-right: 10px;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 14px;
+    }
+    .cast{
+        display: block;
+        -webkit-line-clamp: none;
+        -webkit-box-orient: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-right: 30%;
+        resize: horizontal;
+    }
+    #buttonFirst{
+        display: flex;
+        justify-content: center;
+    }
+}
