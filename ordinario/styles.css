@@ -1,0 +1,92 @@
+body{
+    background-color: #333333;
+    color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+i{
+    margin-right: 4px;
+}
+
+.userChart{
+    background-color: #505050;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #A7A7A7;
+    margin: 10px;
+}
+
+.userChart div{
+    margin: 5px;
+}
+
+.userText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.userContact, .userInfo{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.userContact{
+    border-right: 1px solid #FAFAFA;
+}
+
+.userPhoto img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.userName{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.userContact span, .userInfo span, .userContact button{
+    margin: 5px;
+}
+
+.likeButton{
+    background-color: yellow;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid #A7A7A7;
+    width: 100px;
+}
+
+.iconWithText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .userChart{
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .userText{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .userContact, .userInfo{
+        border: none;
+        padding: 0px;
+    }
+
+}
