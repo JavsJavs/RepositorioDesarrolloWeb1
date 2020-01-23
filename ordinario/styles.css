@@ -14,7 +14,7 @@ i{
     background-color: #505050;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     border-radius: 10px;
     border: 1px solid #A7A7A7;
@@ -22,7 +22,7 @@ i{
 }
 
 .userChart div{
-    margin: 5px;
+    margin: 2px;
 }
 
 .userText{
@@ -30,23 +30,30 @@ i{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 75%;
 }
 
 .userContact, .userInfo{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px;
     font-size: 16px;
 }
 
 .userContact{
     border-right: 1px solid #FAFAFA;
+    width: 65%;
 }
 
-.userPhoto img{
+.userInfo{
+    width: 35%;
+}
+
+.userPhoto img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    margin: 10px;
 }
 
 .userName{
@@ -58,26 +65,38 @@ i{
     margin: 5px;
 }
 
+.likeButton, .dislikeButton{
+    border-radius: 10px;
+    border: 1px solid #FAFAFA;
+    width: 100px;
+}
+
 .likeButton{
     background-color: yellow;
     color: black;
-    border-radius: 10px;
-    border: 1px solid #A7A7A7;
-    width: 100px;
+}
+
+.dislikeButton{
+    background-color: cornflowerblue;
+    color: #FAFAFA;
 }
 
 .iconWithText{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
+}
+
+.userLocation{
+    display: flex;
+    flex-direction: column;
+}
+
+.userLocation span{
+    margin: 0px;
 }
 
 @media screen and (max-width: 600px) {
-    .userChart{
-        align-items: flex-start;
-        padding: 10px;
-    }
-
     .userText{
         flex-direction: column;
         align-items: flex-start;
@@ -87,6 +106,6 @@ i{
     .userContact, .userInfo{
         border: none;
         padding: 0px;
+        width: 100%;
     }
-
 }
